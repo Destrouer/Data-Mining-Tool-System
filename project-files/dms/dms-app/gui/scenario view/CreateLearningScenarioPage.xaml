@@ -22,6 +22,9 @@
         <DataTemplate x:Key="undefined">
             <Label Content="Здесь могли быть ваши параметры"/>
         </DataTemplate>
+        <DataTemplate x:Key="decisionTreeTemplate">
+            <Label Content=""/>
+        </DataTemplate>
     </UserControl.Resources>
     <StackPanel>
         <Grid Height="163">
@@ -62,6 +65,9 @@
                             </DataTrigger>
                             <DataTrigger Binding="{Binding TeacherType}" Value="Самоорганизация Кохонена">
                                 <Setter Property="ContentTemplate" Value="{StaticResource selfOrganize}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding TeacherType}" Value="Деревья решений">
+                                <Setter Property="ContentTemplate" Value="{StaticResource decisionTreeTemplate}" />
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
